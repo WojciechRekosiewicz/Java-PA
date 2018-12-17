@@ -36,7 +36,8 @@ public class View {
         int choose;
         System.out.println("Options");
         System.out.println("1. To show all media");
-        System.out.println("2. To rent media");
+        System.out.println("2. To search media by title");
+        System.out.println("3. To rent media");
         System.out.println("0. To go back to menu");
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextInt();
@@ -46,6 +47,10 @@ public class View {
                 menu();
                 break;
             case 2:
+                displayByTitle();
+                menu();
+                break;
+            case 3:
                 rentOption();
                 menu();
                 break;
@@ -54,6 +59,30 @@ public class View {
                 break;
         }
     }
+
+    private void displayByTitle(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. To enter one word title");
+        System.out.println("2. To enter two word title");
+        System.out.println("0. To go back to menu");
+        int subChoose = scanner.nextInt();
+        switch (subChoose){
+            case 1:
+                System.out.println("Enter title to display");
+                String titleShort = scanner.next();
+                System.out.println(user.searchMediaByTitle(mediaArray, titleShort));
+                break;
+
+            case 2:
+                System.out.println("Enter title to display");
+                String titleLong = scanner.next() + " " + scanner.next();
+                System.out.println(user.searchMediaByTitle(mediaArray, titleLong));
+                break;
+            case 0:
+                break;
+        }
+    }
+
 
     private void rentOption(){
         Scanner scanner = new Scanner(System.in);
