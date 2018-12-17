@@ -36,16 +36,19 @@ public class View {
         int choose;
         System.out.println("Options");
         System.out.println("1. To show all media");
-        System.out.println("2. ");
+        System.out.println("2. To rent media");
         System.out.println("0. To go back to menu");
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextInt();
         switch (choose) {
             case 1:
-                displayAll(mediaArray);
+                displayAll();
                 menu();
                 break;
             case 2:
+                System.out.println("Enter title to reserve");
+                String title = scanner.next() + " " + scanner.next();
+                System.out.println(user.rentMedia(mediaArray, title));
                 menu();
                 break;
             case 0:
@@ -82,8 +85,8 @@ public class View {
         }
     }
 
-    public void displayAll(ArrayList<MediaItem> mediaItems){
-        for (MediaItem mediaItem : mediaItems) {
+    public void displayAll(){
+        for (MediaItem mediaItem : mediaArray) {
                 System.out.println( mediaItem.toString());
         }
     }
