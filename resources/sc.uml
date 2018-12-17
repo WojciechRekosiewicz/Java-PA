@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="942.0" y="941.0">com</node>
+    <node x="40.78571428571428" y="487.0">model.Book</node>
+    <node x="0.0" y="941.0">netscape</node>
+    <node x="528.375" y="176.5">model.interfaces.Watchable</node>
+    <node x="434.0" y="1015.0">sun</node>
+    <node x="309.0" y="594.0">controller.User</node>
+    <node x="794.0" y="941.0">view</node>
+    <node x="677.0" y="845.0">groovyjarjarasm</node>
+    <node x="147.0" y="1015.0">java</node>
+    <node x="643.0" y="941.0">javax</node>
+    <node x="488.0" y="941.0">javafx</node>
+    <node x="0.0" y="594.0">model.Data</node>
+    <node x="0.0" y="1015.0">junit</node>
+    <node x="331.0" y="941.0">oracle</node>
+    <node x="292.0" y="1015.0">org</node>
+    <node x="919.875" y="1.25">controller.UserTest</node>
+    <node x="736.0" y="594.0">controller.Manager</node>
+    <node x="277.82142857142856" y="487.0">model.Song</node>
+    <node x="886.0" y="845.0">META-INF</node>
+    <node x="575.0" y="1015.0">jdk</node>
+    <node x="0.0" y="187.5">model.interfaces.Readable</node>
+    <node x="171.0" y="941.0">groovy</node>
+    <node x="377.0" y="187.5">model.interfaces.Listenable</node>
+    <node x="494.875" y="476.0">model.Film</node>
+    <node x="147.0" y="0.0">model.MediaItem</node>
+    <node x="213.0" y="845.0">groovyjarjarcommonscli</node>
+    <node x="465.0" y="845.0">groovyjarjarantlr</node>
+    <node x="0.0" y="845.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.Song" target="model.MediaItem">
+      <point x="-32.75" y="-25.5" />
+      <point x="310.57142857142856" y="456.0" />
+      <point x="252.0" y="456.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+    <edge source="model.Film" target="model.interfaces.Watchable">
+      <point x="33.5" y="-36.5" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="model.Film" target="model.MediaItem">
+      <point x="-33.5" y="-36.5" />
+      <point x="528.375" y="446.0" />
+      <point x="322.0" y="446.0" />
+      <point x="70.0" y="213.0" />
+    </edge>
+    <edge source="model.Book" target="model.interfaces.Readable">
+      <point x="-31.75" y="-25.5" />
+      <point x="72.53571428571428" y="456.0" />
+      <point x="63.5" y="456.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="model.Song" target="model.interfaces.Listenable">
+      <point x="32.75" y="-25.5" />
+      <point x="376.07142857142856" y="456.0" />
+      <point x="442.5" y="456.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="model.Book" target="model.MediaItem">
+      <point x="31.75" y="-25.5" />
+      <point x="136.03571428571428" y="456.0" />
+      <point x="182.0" y="456.0" />
+      <point x="-70.0" y="213.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="402.0" y="389.75" />
+  <SelectedNodes>
+    <node>controller.UserTest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
