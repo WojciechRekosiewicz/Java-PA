@@ -33,26 +33,6 @@ public abstract class MediaItem {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
-    }
-
     public boolean isRented() {
         return isRented;
     }
@@ -83,13 +63,6 @@ public abstract class MediaItem {
         return "Not reserved";
     }
 
-    public String getGenus() {
-        return genus;
-    }
-
-    public void setGenus(String genus) {
-        this.genus = genus;
-    }
 
     public String displayLength() {
         Integer toConvert = length;
