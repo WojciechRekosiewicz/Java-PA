@@ -1,5 +1,7 @@
 package model;
 
+import model.interfaces.Readable;
+
 public class Book extends MediaItem implements Readable {
 
 

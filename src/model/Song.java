@@ -1,5 +1,7 @@
 package model;
 
+import model.interfaces.Listenable;
+
 public class Song extends MediaItem implements Listenable {
 
     public Song(String name, String author, int length, int releaseDate, boolean isRented,
