@@ -70,17 +70,17 @@ public abstract class MediaItem {
 
     private String checkerRent(){
         if (isRented){
-            return "available";
+            return "Rented";
         }
-        return "not available";
+        return "Not rented";
 
     }
 
     private String checkerReserved(){
         if (isReserved){
-            return "available";
+            return "Reserved";
         }
-        return "not available";
+        return "Not reserved";
     }
 
     public String getGenus() {
@@ -91,16 +91,26 @@ public abstract class MediaItem {
         this.genus = genus;
     }
 
+    public String displayLength() {
+        Integer toConvert = length;
+        String sLength = toConvert.toString();
+        if (genus.equals("Movie") || genus.equals("Song")) {
+            return sLength + " minutes";
+        } else if (genus.equals("Book")) {
+            return sLength + " pages";
+        }
+        return sLength;
+    }
+
     @Override
     public String toString() {
-        return "MediaItem{" +
-                "name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", length=" + length +
-                ", releaseYear=" + releaseYear +
-                ", isRented=" + checkerRent() +
-                ", isReserved=" + checkerReserved() +
-                ", genus=" + genus +
+        return "Title -> " + name +
+                ", Author " + author + ", " +
+                displayLength() + " " +
+                ", ReleaseYear " + releaseYear +
+                ", " + checkerRent() + ", " +
+                checkerReserved() + ", " +
+                ", Genus " + genus +
                 '}';
     }
 }
