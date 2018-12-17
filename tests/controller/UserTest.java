@@ -35,7 +35,7 @@ public class UserTest {
 
     @Test
     public void searchMediaByTitle_BadTitle_NotFound(){
-        String searchWrong = "Very bad title";
+        String searchWrong = "Bad title";
         String expectedError = "Media not found";
 
         Assert.assertEquals(expectedError, user.searchMediaByTitle(testArray, searchWrong));
@@ -60,7 +60,7 @@ public class UserTest {
 
     @Test
     public void searchMediaByAuthor_BadTitle_NotFound(){
-        String searchWrong = "Very bad title";
+        String searchWrong = "Bad title";
         String expectedError = "Media not found";
 
         Assert.assertEquals(expectedError, user.searchMediaByAuthor(testArray, searchWrong));
@@ -91,7 +91,7 @@ public class UserTest {
         @Test
         public void rentMedia_BadTitle_NotFound() {
             String expectedError = "Media not found";
-            String searchWrong = "very bad title";
+            String searchWrong = "Bad title";
             boolean expectedChange = true;
 
             user.rentMedia(testArray, title);
@@ -150,7 +150,7 @@ public class UserTest {
         @Test
         public void returnMedia_BadTitle_NotFound() {
             String expectedError = "Media not found";
-            String searchWrong = "very bad title";
+            String searchWrong = "Bad title";
 
             Assert.assertEquals(expectedError, user.returnMedia(testArray, searchWrong));
         }
