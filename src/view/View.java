@@ -32,7 +32,7 @@ public class View {
 
     }
 
-    public void userOptions() {
+    private void userOptions() {
         int choose;
         System.out.println("Options");
         System.out.println("1. To show all media");
@@ -46,26 +46,7 @@ public class View {
                 menu();
                 break;
             case 2:
-                System.out.println("1. To enter one word title");
-                System.out.println("2. To enter two word title");
-                System.out.println("0. To go back to menu");
-                int subChoose = scanner.nextInt();
-                switch (subChoose){
-                    case 1:
-                        System.out.println("Enter title to reserve");
-                        String titleShort = scanner.next();
-                        System.out.println(user.rentMedia(mediaArray, titleShort));
-                        break;
-
-                    case 2:
-                        System.out.println("Enter title to reserve");
-                        String titleLong = scanner.next() + " " + scanner.next();
-                        System.out.println(user.rentMedia(mediaArray, titleLong));
-                        break;
-                    case 0:
-                        break;
-
-                }
+                rentOption();
                 menu();
                 break;
             case 0:
@@ -74,7 +55,30 @@ public class View {
         }
     }
 
-    public void managerOptions() {
+    private void rentOption(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. To enter one word title");
+        System.out.println("2. To enter two word title");
+        System.out.println("0. To go back to menu");
+        int subChoose = scanner.nextInt();
+        switch (subChoose){
+            case 1:
+                System.out.println("Enter title to reserve");
+                String titleShort = scanner.next();
+                System.out.println(user.rentMedia(mediaArray, titleShort));
+                break;
+
+            case 2:
+                System.out.println("Enter title to reserve");
+                String titleLong = scanner.next() + " " + scanner.next();
+                System.out.println(user.rentMedia(mediaArray, titleLong));
+                break;
+            case 0:
+                break;
+        }
+    }
+
+    private void managerOptions() {
         System.out.println("Enter manager password");
         Scanner scanner = new Scanner(System.in);
         String password = scanner.next();
@@ -84,7 +88,6 @@ public class View {
             int choose;
             System.out.println("1. Add new media ");
             System.out.println("0. To go back to menu");
-    //        Scanner scanner = new Scanner(System.in);
             choose = scanner.nextInt();
             switch (choose) {
                 case 1:
@@ -101,13 +104,13 @@ public class View {
         }
     }
 
-    public void displayAll(){
+    private void displayAll(){
         for (MediaItem mediaItem : mediaArray) {
                 System.out.println( mediaItem.toString());
         }
     }
 
-    public boolean managerPassword(String password){
+    private boolean managerPassword(String password){
        if (password.equals("pass")){
            return true;
        }
