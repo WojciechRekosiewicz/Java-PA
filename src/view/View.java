@@ -46,16 +46,32 @@ public class View {
                 menu();
                 break;
             case 2:
-                System.out.println("Enter title to reserve");
-                String title = scanner.next() + " " + scanner.next();
-                System.out.println(user.rentMedia(mediaArray, title));
+                System.out.println("1. To enter one word title");
+                System.out.println("2. To enter two word title");
+                System.out.println("0. To go back to menu");
+                int subChoose = scanner.nextInt();
+                switch (subChoose){
+                    case 1:
+                        System.out.println("Enter title to reserve");
+                        String titleShort = scanner.next();
+                        System.out.println(user.rentMedia(mediaArray, titleShort));
+                        break;
+
+                    case 2:
+                        System.out.println("Enter title to reserve");
+                        String titleLong = scanner.next() + " " + scanner.next();
+                        System.out.println(user.rentMedia(mediaArray, titleLong));
+                        break;
+                    case 0:
+                        break;
+
+                }
                 menu();
                 break;
             case 0:
                 menu();
                 break;
         }
-
     }
 
     public void managerOptions() {
