@@ -10,10 +10,6 @@ public abstract class MediaItem {
     private boolean isReserved;
     private String genus;
 
-    public String getTeaser() {
-        return teaser;
-    }
-
     private String teaser;
 
 
@@ -72,6 +68,10 @@ public abstract class MediaItem {
         return "Not reserved";
     }
 
+    public String getTeaser() {
+        return teaser;
+    }
+
     private String displayLength() {
         Integer toConvert = length;
         String sLength = toConvert.toString();
@@ -92,6 +92,6 @@ public abstract class MediaItem {
                 ", " + checkerRent() + ", " +
                 checkerReserved() + ", " +
                 ", Genus " + genus +
-                '}';
+                '.';
     }
 }
