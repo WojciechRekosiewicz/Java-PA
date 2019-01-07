@@ -75,9 +75,9 @@ public abstract class MediaItem {
     private String displayLength() {
         Integer toConvert = length;
         String sLength = toConvert.toString();
-        if (genus.equals("Movie") || genus.equals("Song")) {
+        if (genus.equals("Movie") || genus.equals("Song") || genus.equals("Game")){
             return sLength + " minutes";
-        } else if (genus.equals("Book")) {
+        } else if (genus.equals("Book") || genus.equals("Magazine")) {
             return sLength + " pages";
         }
         return sLength;
