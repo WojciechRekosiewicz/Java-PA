@@ -81,10 +81,6 @@ public class UserOptions {
         return message;
     }
 
-    public String reserveMedia(ArrayList<MediaItem> mediaItems, String title) {
-        return null;
-        }
-
     public String preview(ArrayList<MediaItem> mediaItems, String title, String genus) {
         String message;
         if (mediaItems.size() == 0) {
@@ -114,5 +110,9 @@ public class UserOptions {
             message = "Media not found";
         }
         return message;
+    }
+
+    public String reserveMedia(ArrayList<MediaItem> mediaItems, String title) {
+        return null;
     }
 }
