@@ -1,4 +1,4 @@
-package model;
+package model.people;
 
 public class Manager extends User {
 

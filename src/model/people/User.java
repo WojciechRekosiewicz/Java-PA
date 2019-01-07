@@ -1,4 +1,6 @@
-package model;
+package model.people;
+
+import model.media.MediaItem;
 
 import java.util.ArrayList;
 

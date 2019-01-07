@@ -1,4 +1,4 @@
-package model;
+package model.media;
 
 public abstract class MediaItem {
     private String name;

@@ -3,8 +3,8 @@ package view;
 import controller.ManagerOptions;
 import controller.UserOptions;
 import model.Data;
-import model.MediaItem;
-import model.User;
+import model.media.MediaItem;
+import model.people.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,11 +1,11 @@
 package controller;
 
-import model.User;
+import model.people.User;
 import org.junit.Assert;
 
 import model.Data;
-import model.Film;
-import model.MediaItem;
+import model.media.Film;
+import model.media.MediaItem;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 

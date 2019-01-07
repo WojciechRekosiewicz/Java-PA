@@ -1,6 +1,6 @@
 package controller;
 
-import model.MediaItem;
+import model.media.MediaItem;
 
 import java.util.ArrayList;
 

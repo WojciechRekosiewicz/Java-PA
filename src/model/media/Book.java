@@ -1,4 +1,4 @@
-package model;
+package model.media;
 
 import model.interfaces.Readable;
 

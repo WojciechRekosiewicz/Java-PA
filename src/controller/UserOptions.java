@@ -1,6 +1,7 @@
 package controller;
 
-import model.*;
+import model.media.MediaItem;
+import model.people.User;
 
 import java.util.ArrayList;
 
@@ -90,6 +91,7 @@ public class UserOptions {
                 if (title.equals(mediaItem.getName())) {
                     switch (genus) {
                         case "Movie":
+
                             message = mediaItem.getTeaser();
                             return message;
                         case "Book":

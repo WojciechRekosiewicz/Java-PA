@@ -1,5 +1,10 @@
 package model;
 
+import model.media.Book;
+import model.media.Film;
+import model.media.MediaItem;
+import model.media.Song;
+
 import java.util.ArrayList;
 
 public class Data {
