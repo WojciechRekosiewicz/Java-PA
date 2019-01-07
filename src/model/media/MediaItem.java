@@ -9,7 +9,6 @@ public abstract class MediaItem {
     private boolean isRented;
     private boolean isReserved;
     private String genus;
-
     private String teaser;
 
 
