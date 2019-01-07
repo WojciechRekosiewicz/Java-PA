@@ -7,33 +7,18 @@ public abstract class MediaItem {
     private int length;
     private int releaseYear;
     private boolean isRented;
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
-    }
-
     private boolean isReserved;
-
     private String genus;
 
+    public String getTeaser() {
+        return teaser;
+    }
+
+    private String teaser;
+
+
     protected MediaItem(String name, String author, int length, int releaseYear,
-                        boolean isRented, boolean isReserved, String genus) {
+                        boolean isRented, boolean isReserved, String genus, String teaser) {
         this.name = name;
         this.author = author;
         this.length = length;
@@ -41,6 +26,7 @@ public abstract class MediaItem {
         this.isRented = isRented;
         this.isReserved = isReserved;
         this.genus = genus;
+        this.teaser = teaser;
     }
 
     public String getName() {
@@ -94,6 +80,26 @@ public abstract class MediaItem {
         this.genus = genus;
     }
 
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
 
     private String displayLength() {
         Integer toConvert = length;

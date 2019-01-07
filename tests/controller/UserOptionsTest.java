@@ -29,9 +29,36 @@ public class UserOptionsTest {
     }
 
     @Test
+    public void preview(){
+        String genus = "Movie";
+        MediaItem expectedObject = new Film("John Wick", "John Wick", 200,
+                2012, false, false, "Movie", "Man shoots");
+
+        Assert.assertEquals(expectedObject.getTeaser(), userOptions.preview(testArray, title, genus));
+    }
+
+    @Test
+    public void preview_BadTitle_NotFound() {
+        String genus = "Movie";
+        String searchWrong = "Bad title";
+        String expectedError = "Media not found";
+
+        Assert.assertEquals(expectedError, userOptions.preview(testArray, searchWrong, genus));
+    }
+
+    @Test
+    public void preview_ArrayNull_Error() {
+        String genus = "Movie";
+        String expectedError = "Database is empty";
+        ArrayList<MediaItem> emptyArray = new ArrayList<>();
+
+        Assert.assertEquals(expectedError, userOptions.preview(emptyArray, title, genus));
+    }
+
+    @Test
     public void searchMediaByTitle() {
         MediaItem expectedObject = new Film("John Wick", "John Wick", 200,
-                2012, false, false, "Movie");
+                2012, false, false, "Movie", "Man shoots");
 
         Assert.assertEquals(expectedObject.toString(), userOptions.searchMediaByTitle(testArray, title));
     }
@@ -56,7 +83,7 @@ public class UserOptionsTest {
     public void searchMediaByAuthor() {
         String author = "Carl Rinsch";
         MediaItem expectedObject = new Film("47 Ronin", "Carl Rinsch", 128,
-                2013, false, false, "Movie");
+                2013, false, false, "Movie", "Man slice");
 
         Assert.assertEquals(expectedObject.toString(), userOptions.searchMediaByAuthor(testArray, author));
     }

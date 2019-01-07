@@ -94,39 +94,19 @@ public class UserOptions {
                 if (title.equals(mediaItem.getName())) {
                     switch (genus) {
                         case "Movie":
-                            Film film = new Film(mediaItem.getName(), mediaItem.getAuthor(),
-                                    mediaItem.getLength(), mediaItem.getReleaseYear(),
-                                    mediaItem.isRented(), mediaItem.isReserved(), mediaItem.getGenus());
-                            message = mediaItem.toString();
-                            film.watch();
+                            message = mediaItem.getTeaser();
                             return message;
                         case "Book":
-                            Book book = new Book(mediaItem.getName(), mediaItem.getAuthor(),
-                                    mediaItem.getLength(), mediaItem.getReleaseYear(),
-                                    mediaItem.isRented(), mediaItem.isReserved(), mediaItem.getGenus());
-                            message = mediaItem.toString();
-                            book.read();
+                            message = mediaItem.getTeaser();
                             return message;
                         case "Album":
-                            Song song = new Song(mediaItem.getName(), mediaItem.getAuthor(),
-                                    mediaItem.getLength(), mediaItem.getReleaseYear(),
-                                    mediaItem.isRented(), mediaItem.isReserved(), mediaItem.getGenus());
-                            message = mediaItem.toString();
-                            song.listen();
+                            message = mediaItem.getTeaser();
                             return message;
                         case "Game":
-                            Game game = new Game(mediaItem.getName(), mediaItem.getAuthor(),
-                                    mediaItem.getLength(), mediaItem.getReleaseYear(),
-                                    mediaItem.isRented(), mediaItem.isReserved(), mediaItem.getGenus());
-                            message = mediaItem.toString();
-                            game.play();
+                            message = mediaItem.getTeaser();
                             return message;
                         case "Magazine":
-                            Magazine magazine = new Magazine(mediaItem.getName(), mediaItem.getAuthor(),
-                                    mediaItem.getLength(), mediaItem.getReleaseYear(),
-                                    mediaItem.isRented(), mediaItem.isReserved(), mediaItem.getGenus());
-                            message = mediaItem.toString();
-                            magazine.read();
+                            message = mediaItem.getTeaser();
                             return message;
                     }
                 }
