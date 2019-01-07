@@ -4,7 +4,7 @@ import model.MediaItem;
 
 import java.util.ArrayList;
 
-public class Manager {
+public class ManagerOptions {
     public String addMediaItem(ArrayList<MediaItem> mediaItems, MediaItem mediaItem) {
         return null;
     }

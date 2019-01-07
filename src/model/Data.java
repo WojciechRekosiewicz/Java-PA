@@ -14,7 +14,6 @@ public class Data {
 
     public ArrayList<MediaItem> arrayCreator(){
         ArrayList<MediaItem> mediaItemArray = new ArrayList<>();
-
         for (int x = 0; x < name.length; x++){
             if (x < 2 ){
                 mediaItemArray.add(x, new Film(name[x], author[x], length[x],
@@ -28,7 +27,6 @@ public class Data {
                 mediaItemArray.add(x, new Song(name[x], author[x], length[x],
                         releaseDate[x], isRented, isReserved, genus[x]));
             }}
-
         return mediaItemArray;
     }
 }
