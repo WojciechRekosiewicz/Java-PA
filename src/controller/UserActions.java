@@ -5,7 +5,7 @@ import model.people.User;
 
 import java.util.ArrayList;
 
-public class UserOptions {
+public class UserActions {
     public String searchMediaByTitle(ArrayList<MediaItem> mediaItems, String title) {
         String message;
         if (mediaItems.size() == 0) {
@@ -82,31 +82,15 @@ public class UserOptions {
         return message;
     }
 
-    public String preview(ArrayList<MediaItem> mediaItems, String title, String genus) {
+    public String preview(ArrayList<MediaItem> mediaItems, String title) {
         String message;
         if (mediaItems.size() == 0) {
             message ="Database is empty";
         } else {
             for (MediaItem mediaItem : mediaItems) {
                 if (title.equals(mediaItem.getName())) {
-                    switch (genus) {
-                        case "Movie":
-
-                            message = mediaItem.getTeaser();
-                            return message;
-                        case "Book":
-                            message = mediaItem.getTeaser();
-                            return message;
-                        case "Album":
-                            message = mediaItem.getTeaser();
-                            return message;
-                        case "Game":
-                            message = mediaItem.getTeaser();
-                            return message;
-                        case "Magazine":
-                            message = mediaItem.getTeaser();
-                            return message;
-                    }
+                    message = mediaItem.getTeaser();
+                    return message;
                 }
             }
             message = "Media not found";

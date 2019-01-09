@@ -24,15 +24,15 @@ public class Data {
         for (int x = 0; x < name.length; x++){
             if (x < 2 ){
                 mediaItemArray.add(x, new Film(name[x], author[x], length[x],
-                        releaseDate[x], isRented, isReserved, genus[x], teaser[x]));
+                        releaseDate[x], isRented, isReserved, teaser[x]));
             }
             else if (x < 4 && x >= 2 ){
                 mediaItemArray.add(x, new Book(name[x], author[x], length[x],
-                        releaseDate[x], isRented, isReserved, genus[x], teaser[x]));
+                        releaseDate[x], isRented, isReserved, teaser[x]));
             }
             else if (x >= 4 && x < 6 ){
                 mediaItemArray.add(x, new Song(name[x], author[x], length[x],
-                        releaseDate[x], isRented, isReserved, genus[x], teaser[x]));
+                        releaseDate[x], isRented, isReserved, teaser[x]));
             }}
         return mediaItemArray;
     }

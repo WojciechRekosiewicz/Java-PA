@@ -1,7 +1,7 @@
 package view;
 
 import controller.ManagerOptions;
-import controller.UserOptions;
+import controller.UserActions;
 import model.Data;
 import model.media.MediaItem;
 import model.people.User;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class View {
     private Data data = new Data();
-    private UserOptions userOptions = new UserOptions();
+    private UserActions userActions = new UserActions();
     private ManagerOptions managerOptions = new ManagerOptions();
     private ArrayList<MediaItem> mediaArray = data.arrayCreator();
     private User user1 = new User("Stefan");
@@ -19,7 +19,7 @@ public class View {
     public void menu() {
         int choose;
         System.out.println("Choose what do you wanna do");
-        System.out.println("1. UserOptions options");
+        System.out.println("1. UserActions options");
         System.out.println("2. ManagerOptions options");
         Scanner scanner = new Scanner(System.in);
         choose = scanner.nextInt();
@@ -100,13 +100,13 @@ public class View {
             case 1:
                 System.out.println("Enter title to display");
                 String titleShort = scanner.next();
-                System.out.println(userOptions.searchMediaByTitle(mediaArray, titleShort));
+                System.out.println(userActions.searchMediaByTitle(mediaArray, titleShort));
                 break;
 
             case 2:
                 System.out.println("Enter title to display");
                 String titleLong = scanner.next() + " " + scanner.next();
-                System.out.println(userOptions.searchMediaByTitle(mediaArray, titleLong));
+                System.out.println(userActions.searchMediaByTitle(mediaArray, titleLong));
                 break;
             case 0:
                 break;
@@ -124,13 +124,13 @@ public class View {
             case 1:
                 System.out.println("Enter title to reserve");
                 String titleShort = scanner.next();
-                System.out.println(userOptions.rentMedia(mediaArray, titleShort, user1));
+                System.out.println(userActions.rentMedia(mediaArray, titleShort, user1));
                 break;
 
             case 2:
                 System.out.println("Enter title to reserve");
                 String titleLong = scanner.next() + " " + scanner.next();
-                System.out.println(userOptions.rentMedia(mediaArray, titleLong, user1));
+                System.out.println(userActions.rentMedia(mediaArray, titleLong, user1));
                 break;
             case 0:
                 break;

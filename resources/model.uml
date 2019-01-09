@@ -3,24 +3,24 @@
   <ID>JAVA</ID>
   <OriginalElement>model</OriginalElement>
   <nodes>
-    <node x="35.0" y="221.0">model.interfaces.Playable</node>
-    <node x="1653.0" y="553.0">model.media.Film</node>
-    <node x="1871.75" y="221.0">model.interfaces.Watchable</node>
-    <node x="410.0" y="553.0">model.media.Book</node>
+    <node x="1874.0" y="221.0">model.interfaces.Playable</node>
+    <node x="837.0" y="553.0">model.media.Film</node>
+    <node x="1067.4025000000001" y="221.0">model.interfaces.Watchable</node>
+    <node x="431.0" y="553.0">model.media.Book</node>
     <node x="61.5" y="907.0">model.people.Manager</node>
-    <node x="474.75" y="221.0">model.interfaces.Readable</node>
-    <node x="0.0" y="553.0">model.media.Game</node>
-    <node x="916.25" y="0.0">model.media.MediaItem</node>
+    <node x="82.65250000000003" y="221.0">model.interfaces.Readable</node>
+    <node x="1644.0" y="553.0">model.media.Game</node>
+    <node x="607.3525000000001" y="0.0">model.media.MediaItem</node>
+    <node x="1462.0" y="221.0">model.interfaces.Listenable</node>
     <node x="0.0" y="672.0">model.people.User</node>
-    <node x="1471.0" y="221.0">model.interfaces.Listenable</node>
-    <node x="1247.0" y="553.0">model.media.Song</node>
-    <node x="816.0" y="553.0">model.media.Magazine</node>
+    <node x="1238.0" y="553.0">model.media.Song</node>
     <node x="326.0" y="672.0">model.Data</node>
+    <node x="0.0" y="553.0">model.media.Magazine</node>
   </nodes>
   <notes />
   <edges>
     <edge source="model.media.Game" target="model.interfaces.Playable">
-      <point x="-97.5" y="-37.0" />
+      <point x="97.5" y="-37.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="model.people.Manager" target="model.people.User">
@@ -29,6 +29,8 @@
     </edge>
     <edge source="model.media.Film" target="model.interfaces.Watchable">
       <point x="95.25" y="-37.0" />
+      <point x="1122.75" y="533.0" />
+      <point x="1134.4025000000001" y="533.0" />
       <point x="0.0" y="25.5" />
     </edge>
     <edge source="model.media.Song" target="model.interfaces.Listenable">
@@ -37,50 +39,56 @@
     </edge>
     <edge source="model.media.Book" target="model.media.MediaItem">
       <point x="96.5" y="-37.0" />
-      <point x="699.5" y="533.0" />
-      <point x="1041.05" y="533.0" />
+      <point x="720.5" y="533.0" />
+      <point x="732.1525" y="533.0" />
       <point x="-83.20000000000005" y="246.5" />
-    </edge>
-    <edge source="model.media.Film" target="model.media.MediaItem">
-      <point x="-95.25" y="-37.0" />
-      <point x="1748.25" y="523.0" />
-      <point x="1290.65" y="523.0" />
-      <point x="166.39999999999998" y="246.5" />
     </edge>
     <edge source="model.media.Magazine" target="model.media.MediaItem">
       <point x="102.75" y="-37.0" />
+      <point x="308.25" y="533.0" />
+      <point x="648.9525000000001" y="533.0" />
+      <point x="-166.39999999999998" y="246.5" />
+    </edge>
+    <edge source="model.media.Film" target="model.media.MediaItem">
+      <point x="-95.25" y="-37.0" />
+      <point x="932.25" y="533.0" />
+      <point x="815.3525000000001" y="533.0" />
       <point x="0.0" y="246.5" />
     </edge>
     <edge source="model.media.Magazine" target="model.interfaces.Readable">
       <point x="-102.75" y="-37.0" />
-      <point x="918.75" y="513.0" />
-      <point x="570.0" y="513.0" />
-      <point x="31.75" y="25.5" />
+      <point x="102.75" y="533.0" />
+      <point x="114.40250000000003" y="533.0" />
+      <point x="-31.75" y="25.5" />
     </edge>
     <edge source="model.media.Song" target="model.media.MediaItem">
       <point x="-96.5" y="-37.0" />
-      <point x="1343.5" y="533.0" />
-      <point x="1207.4499999999998" y="533.0" />
-      <point x="83.19999999999993" y="246.5" />
+      <point x="1334.5" y="523.0" />
+      <point x="898.5524999999999" y="523.0" />
+      <point x="83.19999999999982" y="246.5" />
     </edge>
     <edge source="model.media.Book" target="model.interfaces.Readable">
       <point x="-96.5" y="-37.0" />
-      <point x="-31.75" y="25.5" />
+      <point x="527.5" y="523.0" />
+      <point x="177.90250000000003" y="523.0" />
+      <point x="31.75" y="25.5" />
     </edge>
     <edge source="model.media.Game" target="model.media.MediaItem">
-      <point x="97.5" y="-37.0" />
-      <point x="292.5" y="523.0" />
-      <point x="957.85" y="523.0" />
-      <point x="-166.39999999999998" y="246.5" />
+      <point x="-97.5" y="-37.0" />
+      <point x="1741.5" y="513.0" />
+      <point x="981.7524999999999" y="513.0" />
+      <point x="166.39999999999986" y="246.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.8" x="740.0" y="586.75" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.8" x="809.1666666666665" y="607.952380952381" />
+  <SelectedNodes>
+    <node>model.media.Magazine</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
-    <Category>Inner Classes</Category>
     <Category>Methods</Category>
+    <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

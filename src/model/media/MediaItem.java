@@ -4,23 +4,26 @@ public abstract class MediaItem {
     private String name;
 
     private String author;
+
+    public int getLength() {
+        return length;
+    }
+
     private int length;
     private int releaseYear;
     private boolean isRented;
     private boolean isReserved;
-    private String genus;
     private String teaser;
 
 
     protected MediaItem(String name, String author, int length, int releaseYear,
-                        boolean isRented, boolean isReserved, String genus, String teaser) {
+                        boolean isRented, boolean isReserved, String teaser) {
         this.name = name;
         this.author = author;
         this.length = length;
         this.releaseYear = releaseYear;
         this.isRented = isRented;
         this.isReserved = isReserved;
-        this.genus = genus;
         this.teaser = teaser;
     }
 
@@ -71,16 +74,7 @@ public abstract class MediaItem {
         return teaser;
     }
 
-    private String displayLength() {
-        Integer toConvert = length;
-        String sLength = toConvert.toString();
-        if (genus.equals("Movie") || genus.equals("Song") || genus.equals("Game")){
-            return sLength + " minutes";
-        } else if (genus.equals("Book") || genus.equals("Magazine")) {
-            return sLength + " pages";
-        }
-        return sLength;
-    }
+    abstract String displayLength();
 
     @Override
     public String toString() {
@@ -90,7 +84,11 @@ public abstract class MediaItem {
                 ", ReleaseYear " + releaseYear +
                 ", " + checkerRent() + ", " +
                 checkerReserved() + ", " +
-                ", Genus " + genus +
+                ", Genus " + getGenus() +
                 '.';
     }
+
+    protected abstract String getGenus();
+
+
 }

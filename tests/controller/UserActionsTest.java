@@ -11,9 +11,9 @@ import org.junit.jupiter.api.BeforeEach;
 
 import java.util.ArrayList;
 
-public class UserOptionsTest {
+public class UserActionsTest {
 
-    private UserOptions userOptions;
+    private UserActions userActions;
     private Data data;
     private ArrayList<MediaItem> testArray;
     private String title;
@@ -23,7 +23,7 @@ public class UserOptionsTest {
     public void prepareData() {
         data = new Data();
         testArray = data.arrayCreator();
-        userOptions = new UserOptions();
+        userActions = new UserActions();
         title = "John Wick";
         user = new User("Zenon");
     }
@@ -31,10 +31,9 @@ public class UserOptionsTest {
     @Test
     public void preview(){
         String genus = "Movie";
-        MediaItem expectedObject = new Film("John Wick", "John Wick", 200,
-                2012, false, false, "Movie", "Man shoots");
+        String expectedTeaser = "Man shoots";
 
-        Assert.assertEquals(expectedObject.getTeaser(), userOptions.preview(testArray, title, genus));
+        Assert.assertEquals(expectedTeaser, userActions.preview(testArray, title));
     }
 
     @Test
@@ -43,7 +42,7 @@ public class UserOptionsTest {
         String searchWrong = "Bad title";
         String expectedError = "Media not found";
 
-        Assert.assertEquals(expectedError, userOptions.preview(testArray, searchWrong, genus));
+        Assert.assertEquals(expectedError, userActions.preview(testArray, searchWrong));
     }
 
     @Test
@@ -52,15 +51,15 @@ public class UserOptionsTest {
         String expectedError = "Database is empty";
         ArrayList<MediaItem> emptyArray = new ArrayList<>();
 
-        Assert.assertEquals(expectedError, userOptions.preview(emptyArray, title, genus));
+        Assert.assertEquals(expectedError, userActions.preview(emptyArray, title));
     }
 
     @Test
     public void searchMediaByTitle() {
         MediaItem expectedObject = new Film("John Wick", "John Wick", 200,
-                2012, false, false, "Movie", "Man shoots");
+                2012, false, false, "Man shoots");
 
-        Assert.assertEquals(expectedObject.toString(), userOptions.searchMediaByTitle(testArray, title));
+        Assert.assertEquals(expectedObject.toString(), userActions.searchMediaByTitle(testArray, title));
     }
 
     @Test
@@ -68,7 +67,7 @@ public class UserOptionsTest {
         String searchWrong = "Bad title";
         String expectedError = "Media not found";
 
-        Assert.assertEquals(expectedError, userOptions.searchMediaByTitle(testArray, searchWrong));
+        Assert.assertEquals(expectedError, userActions.searchMediaByTitle(testArray, searchWrong));
     }
 
     @Test
@@ -76,16 +75,16 @@ public class UserOptionsTest {
         String expectedError = "Database is empty";
         ArrayList<MediaItem> emptyArray = new ArrayList<>();
 
-        Assert.assertEquals(expectedError, userOptions.searchMediaByTitle(emptyArray, title));
+        Assert.assertEquals(expectedError, userActions.searchMediaByTitle(emptyArray, title));
     }
 
     @Test
     public void searchMediaByAuthor() {
         String author = "Carl Rinsch";
         MediaItem expectedObject = new Film("47 Ronin", "Carl Rinsch", 128,
-                2013, false, false, "Movie", "Man slice");
+                2013, false, false, "Man slice");
 
-        Assert.assertEquals(expectedObject.toString(), userOptions.searchMediaByAuthor(testArray, author));
+        Assert.assertEquals(expectedObject.toString(), userActions.searchMediaByAuthor(testArray, author));
     }
 
     @Test
@@ -93,7 +92,7 @@ public class UserOptionsTest {
         String searchWrong = "Bad title";
         String expectedError = "Media not found";
 
-        Assert.assertEquals(expectedError, userOptions.searchMediaByAuthor(testArray, searchWrong));
+        Assert.assertEquals(expectedError, userActions.searchMediaByAuthor(testArray, searchWrong));
     }
 
     @Test
@@ -102,7 +101,7 @@ public class UserOptionsTest {
         String expectedError = "Database is empty";
         ArrayList<MediaItem> emptyArray = new ArrayList<>();
 
-        Assert.assertEquals(expectedError, userOptions.searchMediaByAuthor(emptyArray, author));
+        Assert.assertEquals(expectedError, userActions.searchMediaByAuthor(emptyArray, author));
     }
 
     @Test
@@ -112,10 +111,10 @@ public class UserOptionsTest {
         boolean expectedChange = true;
         int expectedSize = 2;
 
-        userOptions.rentMedia(testArray, title, user);
+        userActions.rentMedia(testArray, title, user);
 
         Assert.assertEquals(expectedChange, testArray.get(0).isRented());
-        Assert.assertEquals(expectedAlert, userOptions.rentMedia(testArray, secondTitle, user));
+        Assert.assertEquals(expectedAlert, userActions.rentMedia(testArray, secondTitle, user));
         Assert.assertEquals(expectedSize, user.getUserDeposit().size());
 
     }
@@ -126,10 +125,10 @@ public class UserOptionsTest {
         String searchWrong = "Bad title";
         boolean expectedChange = true;
 
-        userOptions.rentMedia(testArray, title, user);
+        userActions.rentMedia(testArray, title, user);
 
         Assert.assertEquals(expectedChange, testArray.get(0).isRented());
-        Assert.assertEquals(expectedError, userOptions.rentMedia(testArray, searchWrong, user));
+        Assert.assertEquals(expectedError, userActions.rentMedia(testArray, searchWrong, user));
     }
 
     @Test
@@ -142,8 +141,8 @@ public class UserOptionsTest {
         testArray.get(0).setRented(true);
         testArray.get(1).setReserved(true);
 
-        Assert.assertEquals(expectedError, userOptions.rentMedia(testArray, title, user));
-        Assert.assertEquals(expectedError, userOptions.rentMedia(testArray, secondTitle, user));
+        Assert.assertEquals(expectedError, userActions.rentMedia(testArray, title, user));
+        Assert.assertEquals(expectedError, userActions.rentMedia(testArray, secondTitle, user));
     }
 
     @Test
@@ -152,7 +151,7 @@ public class UserOptionsTest {
         ArrayList<MediaItem> emptyArray = new ArrayList<>();
 
 
-        Assert.assertEquals(expectedError, userOptions.rentMedia(emptyArray, title, user));
+        Assert.assertEquals(expectedError, userActions.rentMedia(emptyArray, title, user));
     }
 
     @Test
@@ -165,14 +164,14 @@ public class UserOptionsTest {
         //set title to rented status manually
 //        testArray.get(0).setRented(true);
 //        testArray.get(1).setRented(true);
-        userOptions.rentMedia(testArray, mediaRented, user);
-        userOptions.rentMedia(testArray, title, user);
+        userActions.rentMedia(testArray, mediaRented, user);
+        userActions.rentMedia(testArray, title, user);
 
 
-        userOptions.returnMedia(testArray, title, user);
+        userActions.returnMedia(testArray, title, user);
 
         Assert.assertEquals(expectedChange, testArray.get(0).isRented());
-        Assert.assertEquals(expectedAlert, userOptions.returnMedia(testArray, mediaRented, user));
+        Assert.assertEquals(expectedAlert, userActions.returnMedia(testArray, mediaRented, user));
         Assert.assertEquals(expectedSize, user.getUserDeposit().size());
 
     }
@@ -182,7 +181,7 @@ public class UserOptionsTest {
         String media = "47 Ronin";
         String expectedAlert = "This media is not rented";
 
-        Assert.assertEquals(expectedAlert, userOptions.returnMedia(testArray, media, user));
+        Assert.assertEquals(expectedAlert, userActions.returnMedia(testArray, media, user));
     }
 
     @Test
@@ -190,7 +189,7 @@ public class UserOptionsTest {
         String expectedError = "Media not found";
         String searchWrong = "Bad title";
 
-        Assert.assertEquals(expectedError, userOptions.returnMedia(testArray, searchWrong, user));
+        Assert.assertEquals(expectedError, userActions.returnMedia(testArray, searchWrong, user));
     }
 
     @Test
@@ -198,6 +197,6 @@ public class UserOptionsTest {
         String expectedError = "Database is empty";
         ArrayList<MediaItem> emptyArray = new ArrayList<>();
 
-        Assert.assertEquals(expectedError, userOptions.returnMedia(emptyArray, title, user));
+        Assert.assertEquals(expectedError, userActions.returnMedia(emptyArray, title, user));
     }
 }
